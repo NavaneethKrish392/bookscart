@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <mat-card class="my-example-card">
+                <mat-card-header>
+                    <mat-card-title>My Cart</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="my-cart-content">
+                    <div class="col-md-12 mr-tb-10" *ngFor="let book of cartData">
+                        <div class="d-flex bd-highlight main-class">
+                            <div class="p-2 bd-highlight image-class">
+                                <img mat-card-image [src]="book.bookImgUrl" [alt]="book.bookSubTitle">
+                            </div>
+                            <div class="p-2 flex-grow-1 bd-highlight">
+                                <h3>{{book.bookName}}</h3>
+                                <p>Added Qty: <b>{{book.addedQty}}</b></p>
+                                <p>Price: <b>{{book.bookPrice}}</b></p>
+                                <p>Amount: <b style="color: green">{{book.bookPrice * book.addedQty}}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="accent">
+                        Place Order
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="col-md-3">
+            <mat-card class="price-example-card">
+                <mat-card-header>
+                    <mat-card-title>Price Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="d-flex justify-content-between priceDetails">
+                        <div>Prices ({{cartData.length}} items)</div>
+                        <div>{{totalAmount}}</div>
+                    </div>
+                    <div class="d-flex justify-content-between priceDetails">
+                        <div>Discounts</div>
+                        <div>0</div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="d-flex justify-content-between actionsClass">
+                        <div><b>Total Amount</b></div>
+                        <div><b>{{totalAmount}}</b></div>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

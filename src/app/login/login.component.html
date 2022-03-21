@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h1>Login</h1>
+                        <h6>Please enter Email and Password to Login</h6>
+                    </div>
+                    <form [formGroup]="loginForm" (ngSubmit)="loginClick()">
+                        <div class="col-md-12 pd-tb-10">
+                            <mat-form-field appearance="legacy" class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput autocomplete="disabled" formControlName="email">
+                            </mat-form-field>
+                            <div *ngIf="(loginForm.controls['email'].dirty || loginForm.controls['email'].touched) && loginForm.controls['email'].errors" class="errors">
+                                <span *ngIf="loginForm.controls['email'].errors?.required">* Email is required</span>
+                                <span *ngIf="loginForm.controls['email'].errors?.email">* Email is Invalid</span>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-12 pd-tb-10">
+                            <mat-form-field appearance="legacy" class="example-full-width">
+                                <mat-label>Password</mat-label>
+                                <input [type]="hide ? 'password' : 'text'" autocomplete="disabled" matInput formControlName="password">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                            </mat-form-field>
+                            <div *ngIf="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && loginForm.controls['password'].errors" class="errors">
+                                <span *ngIf="loginForm.controls['password'].errors?.required">* Password is required</span>
+                                <span *ngIf="loginForm.controls['password'].errors?.minlength">* Password needs to be 5 characters</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center pd-tb-10">
+                            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-light mr-tb-10">Login</button>
+                            <br />
+                            <a routerLink="/signup">New User? Click here to SignUp</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h1>Sign Up</h1>
+                        <h6>Register to BooksCart</h6>
+                    </div>
+                    <form [formGroup]="signUpForm" (ngSubmit)="signUpClick()">
+                        <div class="row">
+                            <div class="col-md-6 pd-10">
+                                <mat-form-field appearance="legacy" class="example-full-width">
+                                    <mat-label>First Name</mat-label>
+                                    <input type="text" matInput autocomplete="none" formControlName="firstName">
+                                </mat-form-field>
+                                <div *ngIf="(signUpForm.controls['firstName'].dirty || signUpForm.controls['firstName'].touched) && signUpForm.controls['firstName'].errors" class="errors">
+                                    <span *ngIf="signUpForm.controls['firstName'].errors?.required">* First Name is required</span>
+                                    <span *ngIf="signUpForm.controls['firstName'].errors?.minlength">* First Name needs to be 4 characters</span>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6 pd-10">
+                                <mat-form-field appearance="legacy" class="example-full-width">
+                                    <mat-label>Last Name</mat-label>
+                                    <input type="text" matInput autocomplete="none" formControlName="lastName">
+                                </mat-form-field>
+                                <div *ngIf="(signUpForm.controls['lastName'].dirty || signUpForm.controls['lastName'].touched) && signUpForm.controls['lastName'].errors" class="errors">
+                                    <span *ngIf="signUpForm.controls['lastName'].errors?.required">* Last Name is required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 pd-10">
+                                <mat-form-field appearance="legacy" class="example-full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput autocomplete="none" formControlName="email">
+                                </mat-form-field>
+                                <div *ngIf="(signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched) && signUpForm.controls['email'].errors" class="errors">
+                                    <span *ngIf="signUpForm.controls['email'].errors?.required">* Email is required</span>
+                                    <span *ngIf="signUpForm.controls['email'].errors?.email">* Email is Invalid</span>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6 pd-10">
+                                <mat-form-field appearance="legacy" class="example-full-width">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input type="number" matInput autocomplete="none" formControlName="phoneNumber">
+                                </mat-form-field>
+                                <div *ngIf="(signUpForm.controls['phoneNumber'].dirty || signUpForm.controls['phoneNumber'].touched) && signUpForm.controls['phoneNumber'].errors" class="errors">
+                                    <span *ngIf="signUpForm.controls['phoneNumber'].errors?.required">* Phone Number is required</span>
+                                    <span *ngIf="signUpForm.controls['phoneNumber'].errors?.minlength">* Phone Number needs to be 10 characters</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 pd-10">
+                                <mat-form-field appearance="legacy" class="example-full-width">
+                                    <mat-label>Address</mat-label>
+                                    <input type="text" matInput autocomplete="none" formControlName="address">
+                                </mat-form-field>
+                                <div *ngIf="(signUpForm.controls['address'].dirty || signUpForm.controls['address'].touched) && signUpForm.controls['address'].errors" class="errors">
+                                    <span *ngIf="signUpForm.controls['address'].errors?.required">* Address is required</span>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-12 pd-10">
+                                <mat-form-field appearance="legacy" class="example-full-width">
+                                    <mat-label>Password</mat-label>
+                                    <input [type]="hide ? 'password' : 'text'" autocomplete="off" matInput formControlName="password">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                                <div *ngIf="(signUpForm.controls['password'].dirty || signUpForm.controls['password'].touched) && signUpForm.controls['password'].errors" class="errors">
+                                    <span *ngIf="signUpForm.controls['password'].errors?.required">* Password is required</span>
+                                    <span *ngIf="signUpForm.controls['password'].errors?.minlength">* Password needs to be 10 characters</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center pd-10">
+                            <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-light mr-tb-10">Sign Up</button>
+                            <br />
+                            <a routerLink="/login">Already have an account? Click here to Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

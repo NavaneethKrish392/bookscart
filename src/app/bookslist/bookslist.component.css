@@ -1,0 +1,70 @@
+.container {
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 10px 20px !important;
+    max-width: 100% !important;
+    background: #607d8b26;
+}
+
+.mat-card-image {
+    /* width: calc(100% - 125px) !important;
+    margin: 5% 21% !important;
+    max-height: 200px !important; */
+
+    width: calc(100% - 150px) !important;
+    margin: 5% 25% !important;
+    max-height: 180px !important;
+}
+
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.mat-card-content.mat-card-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.mat-card-header {
+    border-bottom: 1px solid #dddddd !important;
+}
+
+mat-card-title.mat-card-title {
+    white-space: nowrap;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+mat-card-subtitle.mat-card-subtitle {
+    margin: 3px 0px !important;
+}
+
+mat-card.mat-card.mat-focus-indicator.example-card:hover {
+    box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
+    border: 1px solid #9e9e9e;
+}
+
+.mat-card>.mat-card-actions {
+    margin-bottom: 0px !important;
+}
+
+button.mat-focus-indicator.mat-raised-button.mat-button-base.mat-primary {
+    width: 100%;
+}
+
+.small-content {
+    padding: 10px 0px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    font-size: 12px !important;
+}
+
+/* .small-content div:first-child {
+    border-right: 1px solid #dddddd;
+} */

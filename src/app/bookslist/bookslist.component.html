@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mr-tb-10" *ngFor="let book of booksData">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>{{book.bookName}}</mat-card-title>
+                    <mat-card-subtitle>
+                        <small>Author: <b>{{book.bookAuthor}}</b></small>
+                    </mat-card-subtitle>
+                    <mat-card-subtitle>
+                        <small>Published On: <b>{{book.publishedDate}}</b></small>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="book.bookImgUrl" [alt]="book.bookSubTitle">
+                <mat-card-content>
+                    <p>{{book.bookDesc}}</p>
+                    <div class="d-flex justify-content-between small-content">
+                        <div>Quantity: <b>{{book.bookQty}}</b></div>
+                        <div>Price: <b>{{book.bookPrice}}</b></div>
+                        <div>Availabilty: 
+                            <b [ngStyle]="(book.bookQty === 0) ? {'color': 'red'} : {'color': 'green'}">{{book.availability}}</b>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button [disabled]="book.bookQty === 0" color="primary" (click)="addCartClick(book)">
+                        Add To Cart
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

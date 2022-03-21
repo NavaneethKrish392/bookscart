@@ -1,0 +1,44 @@
+.container {
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 10px 20px !important;
+    max-width: 100% !important;
+    background: #607d8b26;
+}
+
+.my-example-card mat-card-header.mat-card-header,
+.price-example-card mat-card-header.mat-card-header {
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+.my-example-card mat-card-content.mat-card-content.my-cart-content {
+    height: 372px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+mat-card-actions.mat-card-actions {
+    text-align: end;
+}
+
+.image-class img {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 5px !important;
+}
+
+.main-class {
+    border: 1px solid #dddddd;
+    box-shadow: 0 -2px 19px -3px rgb(0 0 0 / 10%);
+    margin: 0px 15px 10px 0px;
+    border-radius: 5px;
+}
+
+.priceDetails {
+    margin: 25px 0px;
+}
+
+.actionsClass {
+    margin: 0px 5px;
+}

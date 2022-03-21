@@ -1,0 +1,35 @@
+<div class="main-container">
+    <div class="toolbar sticky-top bg-info" role="banner">
+        <mat-toolbar color="primary">
+            <button mat-icon-button class="example-icon" (click)="homeClick()">
+                <mat-icon>book</mat-icon>
+            </button>
+            <span (click)="homeClick()">Books Cart</span>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon" (click)="cartClick()">
+                <mat-icon [matBadge]="cartCount" matBadgeColor="accent">shopping_cart</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" [matMenuTriggerFor]="beforeMenu">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <span [matMenuTriggerFor]="beforeMenu">{{currentUser.firstName}}</span>
+        </mat-toolbar>
+    </div>
+    
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="logOutClick()">Log Out</button>
+    </mat-menu>
+    
+    <div class="content-section">
+        <app-bookslist *ngIf="isShowBooksList" [booksData]="booksData"></app-bookslist>
+        <app-cart *ngIf="!isShowBooksList" [cartData]="cartData"></app-cart>
+    </div>
+    
+    <div class="toolbar sticky-bottom bg-info" role="banner">
+        <mat-toolbar class="footer-toolbar">
+            <span class='spacer'></span>
+              <p>© Copyright Books Cart 2022.</p>
+            <span class='spacer'></span>
+          </mat-toolbar>
+    </div>
+</div>

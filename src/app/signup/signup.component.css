@@ -1,0 +1,17 @@
+::ng-deep .card {
+    /* margin-top: 10px; */
+    border: none;
+    width: 500px;
+    padding: 50px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 3%);
+    background: #4835d4 !important;
+    /* background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%) !important; */
+}
+
+::ng-deep a, a:hover, a:active {
+    color: #ffffff;
+}
